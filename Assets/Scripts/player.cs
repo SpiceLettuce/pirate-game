@@ -7,7 +7,7 @@ public class player : MonoBehaviour
 
     private SpriteRenderer cursprite;
     [SerializeField] Sprite[] sprites;
-    //0 = back 1 = right 2 = front 3 = left
+    //0 = back, 1 = right, 2 = front, 3 = left
 
     public Camera cam;
 
@@ -46,13 +46,21 @@ public class player : MonoBehaviour
         float angle = Mathf.Atan2(dist.y, dist.x)*Mathf.Rad2Deg;
 
         if (angle >= 45 && angle <= 135)
-        { cursprite.sprite = sprites[0]; }
+        {
+            cursprite.sprite = sprites[0];
+        }
         else if (angle >= -135 && angle <= -45)
-        { cursprite.sprite = sprites[2]; }
+        {
+            cursprite.sprite = sprites[2];
+        }
         else if (angle <= 45 && angle >= -45)
-        { cursprite.sprite = sprites[1]; }
+        {
+            cursprite.sprite = sprites[1];
+        }
         else if (angle >= 135 || angle <= -135)
-        { cursprite.sprite = sprites[3]; }
+        {
+            cursprite.sprite = sprites[3];
+        }
 
     }
 }
